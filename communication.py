@@ -4,32 +4,32 @@ from google.cloud import language
 from google.cloud.language import enums
 from google.cloud.language import types
 
-# Twitter API: return a list of tweets and their attributes
-# Input: dict{"main_keyword":, "restriction":}
-# Output: list(dict{"lang":, "text":, 
-# 					"entities":{"hashtag":, media":({"media_url":, "url":, "expanded_url": }), ...},
-#					"retweet_count":, "favorite_count":})
+COUNT = 100
+
+# return a list of tweets and their attributes
+# Param:keywords=[keyword1,keyword2...];
+# Twitter API
 def search_keyword(keyword_dic):
 	twitter_list = []
 	#Instantiates twitter APIs
-	APP_KEY= ''
-	APP_SECRET = ''
-	OAUTH_TOKEN = ''
-	OAUTH_TOKEN_SECRET = ''
+	APP_KEY= '9pvkwqpcmqsoIpi7N2S2EYifT'
+	APP_SECRET = 'mPyCOwlFfThkOcoNqs9CAZOQ4xfzg2WhiYH337Zf0olR9kdUyt'
+	OAUTH_TOKEN = '1172962292217999360-1lz5v2VcMjffkI1ZMfKEkJ5w1OuIer'
+	OAUTH_TOKEN_SECRET = 'MtmCnea4BFTIKuPuFhn9g4Z5axjSoNgFg57LO3dLScio0'
 	twitter = Twython(APP_KEY, APP_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
 
 	SUPPORTED_LANGUAGE = ['zh', 'zh-Hant', 'en', 'fr', 'de', 'it',
-                      'ja', 'ko', 'pt', 'es', 
-                     ]
+					'ja', 'ko', 'pt', 'es', 
+					]
 	keyword = keyword_dic["main_keyword"] + ' "' + keyword_dic["restriction"] +'"'
 	
-	search_result = twitter.search(q=keyword, result_type = 'recent', count = 100, include_entities = True)
+	search_result = twitter.search(q=keyword, result_type = 'recent', count = COUNT, include_entities = True)
 
 	statuses =search_result['statuses'] # The type of statuses is list.
 	for status in statuses:
 		content={}
 		content['lang'] = status['lang']
-		if content['lang'] in SUPPORTED_LANGUAGE:
+		if (content['lang'] in SUPPORTED_LANGUAGE) and ('media' in status['entities']):
 			content["text"] = status['text']
 			content["entities"] = status['entities']
 			content["retweet_count"] = status['retweet_count'] # return int
@@ -39,15 +39,16 @@ def search_keyword(keyword_dic):
 
 
 # Google API
-def keyword_sentiment():
+def keyword_sentiment(tweet_dict):
 	client = language.LanguageServiceClient()
 	document = types.Document(
-          content=tweet_text,
-          language=tweet_lang,
-          type=enums.Document.Type.PLAIN_TEXT,
-          )
+		content=tweet_dict["text"],
+		language=tweet_dict["lang"],
+		type=enums.Document.Type.PLAIN_TEXT,
+		)
 	# Detects the sentiment of the text
-    sentiment = client.analyze_sentiment(document=document).document_sentiment
+	sentiment = client.analyze_sentiment(document=document).document_sentiment
+	return sentiment.score, sentiment.magnitude
 
 if __name__ == '__main__':
 	keyword_dic={'main_keyword': 'jhope', 'restriction': 'bts'}
