@@ -1,9 +1,11 @@
 # EC601 Mini Project
 
 ## Instruction
-Run the KPics.py in the terminal and then follow the questions to input some characters. You can input the main keyword and restriction word you want to search, then choose functions:
+Run the KPics.py in the terminal directly. 
+You can input the main keyword and restriction word you want to search, then choose functions:
 * function 1:display Top 10 recent popular pictures; 
 * function 2:show the recent Twitter Users' sentiment of the searching keywords.
+and then, you can choose exit or not.
 
 ## Architecture
 ![Architecture1](https://user-images.githubusercontent.com/9766409/65399573-7420a580-dd8b-11e9-8d33-74eec6f7e176.png)
@@ -28,4 +30,3 @@ Run the KPics.py in the terminal and then follow the questions to input some cha
 ## License
 * BU ©Ningrong Chen
 * BU ©Yinqi Zhang
-restrication
