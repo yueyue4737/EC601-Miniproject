@@ -1,7 +1,7 @@
 # EC601 Mini Project
 
 ## Instruction
-Run the KPics.py in the terminal and then follow the questions to input some characters. You can input the main keyword and restrication word you want to search, then choose functions:
+Run the KPics.py in the terminal and then follow the questions to input some characters. You can input the main keyword and restriction word you want to search, then choose functions:
 * function 1:display Top 10 recent popular pictures; 
 * function 2:show the recent Twitter Users' sentiment of the searching keywords.
 
