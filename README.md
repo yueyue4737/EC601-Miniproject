@@ -5,6 +5,7 @@ Run the KPics.py in the terminal directly.
 You can input the main keyword and restriction word you want to search, then choose functions:
 * function 1:display Top 10 recent popular pictures; 
 * function 2:show the recent Twitter Users' sentiment of the searching keywords.
+
 and then, you can choose exit or not.
 
 ## Architecture
