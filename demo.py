@@ -12,10 +12,12 @@ SUPPORTED_LANGUAGE = ['zh', 'zh-Hant', 'en', 'fr', 'de', 'it',
                       'ja', 'ko', 'pt', 'es', 
                      ]
 # Twitter APIs keys
-APP_KEY= '9D9RImkNWRHXsFog6kg5P58Nz'
-APP_SECRET = 'L1edcWQXGRHmuTec1BqPnsnUbFtCwCb4nyjCbqhQADQwjmYBmz'
-OAUTH_TOKEN = '1171970982065639425-cFpYotOkAB3KAMyBxKG2Ibcpo1m9Xq'
-OAUTH_TOKEN_SECRET = 'ZlQ1Z3MhRh5jScT2QE1ynfxpLCRs6k9dGfJWJwp7FJeJK'
+
+APP_KEY= ''
+APP_SECRET = ''
+OAUTH_TOKEN = ''
+OAUTH_TOKEN_SECRET = ''
+
 
 # Instantiates twitter APIs and google NL API client.
 twitter = Twython(APP_KEY, APP_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
