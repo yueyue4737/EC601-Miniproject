@@ -1,4 +1,4 @@
-# EC601 Mini Project
+# EC601 Mini Project 1
 
 ## Instruction
 Run the KPics.py in the terminal directly. 
