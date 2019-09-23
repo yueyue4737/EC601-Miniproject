@@ -9,7 +9,7 @@ You can input the main keyword and restriction word you want to search, then cho
 and then, you can choose exit or not.
 
 ## Architecture
-![Architecture1](https://user-images.githubusercontent.com/9766409/65399573-7420a580-dd8b-11e9-8d33-74eec6f7e176.png)
+![Architecture1](https://user-images.githubusercontent.com/9766409/65462122-1c357d80-de23-11e9-9e6b-e129ca285e70.png)
 
 
 ## User Story
