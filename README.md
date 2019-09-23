@@ -6,6 +6,7 @@ Run the KPics.py in the terminal and then follow the questions to input some cha
 * function 2:show the recent Twitter Users' sentiment of the searching keywords.
 
 ## Architecture
+![Architecture1](https://user-images.githubusercontent.com/9766409/65399367-37a07a00-dd8a-11e9-862b-1e22360f8e60.png)
 
 
 ## User Story
