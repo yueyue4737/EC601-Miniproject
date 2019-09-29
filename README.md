@@ -16,10 +16,10 @@ Run the <strong>gui.py</strong> in the terminal directly. You can input the main
 
 ## MVP
 * Analyze the sentiments of tweets.
-* Display the Top 10 recent popular pictures.\
+* Display the Top 10 recent popular pictures.
 
 ## Lessons Learned
-* <italic>What you liked doing?</italic>
+* What you liked doing?
   * Play with the GUI.
   * Yinqi: Read the documents
   * Ningrong: Use Google Natural Language API
@@ -37,6 +37,16 @@ Run the <strong>gui.py</strong> in the terminal directly. You can input the main
 
 ## Architecture
 ![architecture](https://user-images.githubusercontent.com/9766409/65824294-6d36de80-e234-11e9-8999-b98ea747e0c3.png)
+
+## Testing
+* Test Case 1 for staff
+![testCase1](https://user-images.githubusercontent.com/9766409/65824879-f56db180-e23d-11e9-8511-32e39db20d13.png)
+* Test Case 2 for fans (Pics)
+![testCase2](https://user-images.githubusercontent.com/9766409/65824887-12a28000-e23e-11e9-9471-7c25d3ee38d1.png)
+* Test Case 3 for fans (Sentiment)
+![testCase3](https://user-images.githubusercontent.com/9766409/65824900-4087c480-e23e-11e9-9ca8-8e4523fe4839.png)
+* Test Case 4 for the pubilc (Sentiment)
+![testCase4](https://user-images.githubusercontent.com/9766409/65824904-51d0d100-e23e-11e9-8980-ba70d77ee1a2.png)
 
 ## License
 * BU ©Ningrong Chen
