@@ -19,16 +19,16 @@ Run the <strong>gui.py</strong> in the terminal directly. You can input the main
 * Display the Top 10 recent popular pictures.\
 
 ## Lessons Learned
-<italic>What you liked doing?</italic>
-* Play with the GUI.
-* Yinqi: Read the documents
-* Ningrong: Use Google Natural Language API
-What you could have done better?
-* Add connected url beside the pictures.
-* Whole results of twitter feedback.
-What you will avoid in the future?
-* Not using bu email address to apply for the authentication.
-* starting code before building whole logic(???)
+* <italic>What you liked doing?</italic>
+  * Play with the GUI.
+  * Yinqi: Read the documents
+  * Ningrong: Use Google Natural Language API
+* What you could have done better?
+  * Add connected url beside the pictures.
+  * Whole results of twitter feedback.
+* What you will avoid in the future?
+  * Not using bu email address to apply for the authentication.
+  * starting code before building whole logic(???)
 
 ## APIs,libraies
 1. Twitter API(Twython)
