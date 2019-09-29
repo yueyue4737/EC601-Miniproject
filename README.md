@@ -1,31 +1,42 @@
 # EC601 Mini Project
 
 ## Instruction
-Run the KPics.py in the terminal directly. You can input the main keyword and restriction word you want to search, then choose functions:
-* function 1:display Top 10 recent popular pictures;
-* function 2:show the recent Twitter Users' sentiment of the searching keywords.
+Run the <strong>gui.py</strong> in the terminal directly. You can input the main keyword and restriction word you want to search, then choose functions via buttons:
+* General sentiment(left button):show the recent Twitter Users' sentiment of the searching keywords;
+* Top 10 pics(right button):display Top 10 recent popular pictures.
 
-and then, you can choose exit or not.
-
-## Architecture
-![Architecture1](https://user-images.githubusercontent.com/9766409/65399573-7420a580-dd8b-11e9-8d33-74eec6f7e176.png)
-
+## Target Users
+* Fans
+* The staff of an entertainment company
 
 ## User Story
 * I, a big fan of a star, would like to know the recent sentiments about my idol of the public. For instance, as a big fan of Justin Bieber, I am concerned about the public reviews about his marriage. So, I can use the app to search for people’s sentiments about Justin Bieber on Twitter.
 * I, the owner of an entertainment company, want to track Twitter Users‘sentiments of the celebrities in my company.
 * I, as a big fan of BTS, want to use Twitter to find the most viewed pictures of my idol such as a stunning picture from the concert so that I will compensate for the missed interesting pictures as many as possible.
 
+## MVP
+* Analyze the sentiments of tweets.
+* Display the Top 10 recent popular pictures.\
 
-## Goal
-* Analysis the sentiments of tweets.
-* Display the Top 10 recent popular pictures.
-* Write a graphic user interface to get the keyword and to display results.
-* A web(pending) that people can use to search for the top ten popular pictures of their favorite celebrities in Twitter, get the sentiments of relevant tweets.
+## Lessons Learned
+<italic>What you liked doing?</italic>
+* Play with the GUI.
+* Yinqi: Read the documents
+* Ningrong: Use Google Natural Language API
+What you could have done better?
+* Add connected url beside the pictures.
+* Whole results of twitter feedback.
+What you will avoid in the future?
+* Not using bu email address to apply for the authentication.
+* starting code before building whole logic(???)
 
-## APIs
-1. Twitter API
+## APIs,libraies
+1. Twitter API(Twython)
 2. Google Cloud Natural Language API
+3. pyqt5
+
+## Architecture
+![architecture](https://user-images.githubusercontent.com/9766409/65824294-6d36de80-e234-11e9-8999-b98ea747e0c3.png)
 
 ## License
 * BU ©Ningrong Chen
