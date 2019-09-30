@@ -1,4 +1,8 @@
+import time
+import re
+# Import the twython library for Twitter APIs
 from twython import Twython
+from twython import TwythonError
 # Imports the Google Cloud client library
 from google.cloud import language
 from google.cloud.language import enums
@@ -6,16 +10,26 @@ from google.cloud.language import types
 
 COUNT = 100
 
+# filter the tweet text to delete the hash tag, urls, etc.
+def filter(text):
+	text = re.sub('RT \@+\w+\:','',text) #delete head of retweet
+	text = re.sub('\#+\w+\s','',text)     #delete hashtag
+	text = re.sub('https://t.co/+\w+.','',text)  #delete url
+	text = re.sub('\@+\w+(\\n|\s)','',text)    #delete @people	
+	text = re.sub('\n','',text)                #delete \n
+	return text
+
 # return a list of tweets and their attributes
 # Param:keywords=[keyword1,keyword2...];
 # Twitter API
-def search_keyword(keyword_dic):
+def search_keyword(keyword_dic, function_name):
 	twitter_list = []
+	hash_list = []
 	#Instantiates twitter APIs
-	APP_KEY= ''
-	APP_SECRET = ''
-	OAUTH_TOKEN = ''
-	OAUTH_TOKEN_SECRET = ''
+	APP_KEY= '9pvkwqpcmqsoIpi7N2S2EYifT'
+	APP_SECRET = 'mPyCOwlFfThkOcoNqs9CAZOQ4xfzg2WhiYH337Zf0olR9kdUyt'
+	OAUTH_TOKEN = '1172962292217999360-1lz5v2VcMjffkI1ZMfKEkJ5w1OuIer'
+	OAUTH_TOKEN_SECRET = 'MtmCnea4BFTIKuPuFhn9g4Z5axjSoNgFg57LO3dLScio0'
 	twitter = Twython(APP_KEY, APP_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
 
 	SUPPORTED_LANGUAGE = ['zh', 'zh-Hant', 'en', 'fr', 'de', 'it',
@@ -23,18 +37,47 @@ def search_keyword(keyword_dic):
 					]
 	keyword = keyword_dic["main_keyword"] + ' "' + keyword_dic["restriction"] +'"'
 	
-	search_result = twitter.search(q=keyword, result_type = 'recent', count = COUNT, include_entities = True)
+	try:
+		results = twitter.cursor(twitter.search, q=keyword, result_type = 'recent'
+								, count = COUNT, include_entities = True)
+		if function_name == 'keyword_sentiment':
+			MAX_TWEETS = 30
+		elif function_name == 'picture_list':
+			MAX_TWEETS = COUNT * 10
+		else:
+			print("wrong function name")
+		for idx, status in enumerate(results):  # 'results' is a generator. It yields tweet objects
+			if idx < MAX_TWEETS:
+				#print(idx)
+				content={}
+				content['lang'] = status['lang']
+				hashValue = hash(status["text"])  #if texts are identical, hash value is same
+				flag = False
+				if function_name == 'keyword_sentiment':
+					flag = content['lang'] in SUPPORTED_LANGUAGE
+				elif function_name == 'picture_list':
+					flag = (content['lang'] in SUPPORTED_LANGUAGE) and ('media' in status['entities'])
+				else:
+					print("wrong function name.")
+				if flag:
+					if (hashValue not in hash_list) : #or (content["hash"] in twitter_list and content['text'] not in twitter_list)
+						hash_list.append(hashValue)
+						content["text"] = filter(status['text'])
+						content["entities"] = status['entities']
+						content["retweet_count"] = status['retweet_count'] # return int
+						content["favorite_count"] = status['favorite_count'] #return integer or Nullable
+						twitter_list.append(content)
+			else:
+				break
+	except TwythonError as e:
+		if e.error_code == 429:
+			print("Too many requests!")
+		else:
+			print(e.error_code)
+		# print("begin sleep for 15 minutes. Please wait...")
+		# time.sleep(60 * 15)
+		# print("wake up!")
 
-	statuses =search_result['statuses'] # The type of statuses is list.
-	for status in statuses:
-		content={}
-		content['lang'] = status['lang']
-		if (content['lang'] in SUPPORTED_LANGUAGE) and ('media' in status['entities']):
-			content["text"] = status['text']
-			content["entities"] = status['entities']
-			content["retweet_count"] = status['retweet_count'] # return int
-			content["favorite_count"] = status['favorite_count'] #return integer or Nullable
-			twitter_list.append(content)
 	return twitter_list
 
 
@@ -52,11 +95,9 @@ def keyword_sentiment(tweet_dict):
 
 if __name__ == '__main__':
 	keyword_dic={'main_keyword': 'jhope', 'restriction': 'bts'}
-	twitter_list= search_keyword(keyword_dic)
+	twitter_list= search_keyword(keyword_dic, 'keyword_sentiment')
 	
-	for i in range(len(twitter_list)):
-		print(twitter_list[i])
-		print('\n')
+	# for i in range(len(twitter_list)):
+	# 	print(twitter_list[i])
+	# 	print('\n')
 	print(len(twitter_list))
-
-
