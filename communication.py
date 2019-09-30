@@ -77,6 +77,8 @@ def search_keyword(keyword_dic, function_name):
 		# print("begin sleep for 15 minutes. Please wait...")
 		# time.sleep(60 * 15)
 		# print("wake up!")
+	except StopIteration:
+		pass
 
 	return twitter_list
 
