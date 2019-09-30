@@ -26,10 +26,10 @@ def search_keyword(keyword_dic, function_name):
 	twitter_list = []
 	hash_list = []
 	#Instantiates twitter APIs
-	APP_KEY= '9pvkwqpcmqsoIpi7N2S2EYifT'
-	APP_SECRET = 'mPyCOwlFfThkOcoNqs9CAZOQ4xfzg2WhiYH337Zf0olR9kdUyt'
-	OAUTH_TOKEN = '1172962292217999360-1lz5v2VcMjffkI1ZMfKEkJ5w1OuIer'
-	OAUTH_TOKEN_SECRET = 'MtmCnea4BFTIKuPuFhn9g4Z5axjSoNgFg57LO3dLScio0'
+	APP_KEY= ''
+	APP_SECRET = ''
+	OAUTH_TOKEN = ''
+	OAUTH_TOKEN_SECRET = ''
 	twitter = Twython(APP_KEY, APP_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
 
 	SUPPORTED_LANGUAGE = ['zh', 'zh-Hant', 'en', 'fr', 'de', 'it',
