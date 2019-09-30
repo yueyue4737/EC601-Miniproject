@@ -5,7 +5,7 @@ from communication import search_keyword, keyword_sentiment
 #         expanded url (web page containing the video/photo), media url (https)...
 def get_picture_list(arguments):
 	key_dict = arguments.keyword_dic
-	tweet_list = search_keyword(key_dict)
+	tweet_list = search_keyword(key_dict, arguments.function_name)
 	ordered_tweets = []
 	for tweet_dict in tweet_list:
 		total_count = tweet_dict["retweet_count"] + tweet_dict["favorite_count"]
@@ -23,7 +23,7 @@ def get_picture_list(arguments):
 # Output: ([-1, 1]+1)*50 --> [0, 100];
 def get_keyword_sentiment(arguments):
 	key_dict = arguments.keyword_dic
-	tweet_list = search_keyword(key_dict)
+	tweet_list = search_keyword(key_dict, arguments.function_name)
 	sentiment = 0
 	sum_power = 0
 	for tweet_dict in tweet_list:
