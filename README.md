@@ -54,7 +54,7 @@ __3. What you will avoid in the future?__
 
 In the process of doing this project, we found it took much more effort than we thought to work together efficiently.
   * First of all, do remember to use bu email address to apply for twitter keys and tokens or you're very likely to be rejected. We wasted almost three days on this issue :(
-  * Before you get down to writing code, only establish the whole logic of your program is crucial yet not enough. Once the program structure was decided, we also figured out most functions's name, their parameters, their return value and how these functions would work with each other, which enabled us to write different modules of our program simultaneously.
+  * Before you get down to write code, only establish the whole logic of your program is crucial yet not enough. Once the program structure was decided, we also figured out most functions's name, their parameters, their return value and how these functions would work with each other, which enabled us to write different modules of our program simultaneously.
     The logic of our program, however, changed from time to time, leading to conflicts between modules. So, next time woking on a team, we think it's better to stop to revise all descriptions of functions before coding.
 
 ## Architecture (Modules)
