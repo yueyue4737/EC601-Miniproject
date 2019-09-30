@@ -25,7 +25,7 @@ def filter(text):
 def search_keyword(keyword_dic, function_name):
 	twitter_list = []
 	hash_list = []
-	#Instantiates twitter APIs
+	# Fill in your keys and tokens
 	APP_KEY= ''
 	APP_SECRET = ''
 	OAUTH_TOKEN = ''
