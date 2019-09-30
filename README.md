@@ -43,10 +43,12 @@ __1. What you liked doing?__
   * Play with the GUI.
   * Yinqi: I like reading the documents to find out details about how to use a function. For instance, what is this fucntion for? What's the meaning of each parameters. What's the return value type. There are quite a few more, and figuring out them is interesting.
   * Ningrong: Use Google Natural Language API
+  
 __2. What you could have done better?__
 If we have more time, we would like to add the following two functions:
   * Not only display the sentiment of stars but also the relevent tweets for users to read.
   * Display top 10 popular pictures and urls of tweets where pictures extracted from. In this way, we will feed our users with more information they concerned about.
+  
 __3. What you will avoid in the future?__
 In the process of doing this project, we found it took much more effort than we thought to work together efficiently.
   * First of all, do remember to use bu email address to apply for twitter keys and tokens or you're very likely to be rejected. We wasted two days onf this issue :(
