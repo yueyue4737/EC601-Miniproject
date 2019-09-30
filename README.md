@@ -1,12 +1,17 @@
 # EC601 Mini Project 1
 
-## Instruction
-Run the KPics.py in the terminal directly. 
-You can input the main keyword and restriction word you want to search, then choose functions:
-* function 1:display Top 10 recent popular pictures; 
-* function 2:show the recent Twitter Users' sentiment of the searching keywords.
+## License
+* BU ©Ningrong Chen
+* BU ©Yinqi Zhang
 
-and then, you can choose exit or not.
+## Usage Instruction
+1. Download this repository to your computer using command`git clone git://https://github.com/Bunny-Nora/EC601-Miniproject.git`, then unzip the file
+2. Fill in your Twitter `Consumer API keys` and `Access token & access token secret` in `communication.py` with comment `# Fill in your keys and tokens`
+3. Run `gui.py` to start our graphical user interface. 
+4. In this interface, you can enter a star's name you would like to search as the main keyword as well as a restriction keyword. For example: `main kayword: Justin Bieber` `restriction keyword: concert`
+Then click either of the two buttons:
+* Click `General sentiment` to see Twitter Users' recent sentiment of the star you search for.
+* Click `Top 10 Pics` to see top 10 popular pictures of the star extracted from recent tweets.
 
 ## Architecture
 ![Architecture1](https://user-images.githubusercontent.com/9766409/65462122-1c357d80-de23-11e9-9e6b-e129ca285e70.png)
@@ -27,7 +32,3 @@ and then, you can choose exit or not.
 ## APIs
 1. Twitter API
 2. Google Cloud Natural Language API
-
-## License
-* BU ©Ningrong Chen
-* BU ©Yinqi Zhang
