@@ -42,13 +42,13 @@ Then click either of the two buttons:
 __1. What you liked doing?__
   * Play with the GUI.
   * Yinqi: I like reading the documents to find out details about how to use a function. For instance, what is this fucntion for? What's the meaning of each parameters. What's the return value type. There are quite a few more, and figuring out them is interesting.
-  * Ningrong: Use Google Natural Language API
+  * Ningrong: I like learning a lot of new things such as pyqt5 to build a graphic user interface, twython and google Natural Language API, which makes me feel I am stepping into a new field.
   
 __2. What you could have done better?__
 
 If we have more time, we would like to add the following two functions:
   * Not only display the sentiment of stars but also the relevent tweets for users to read.
-  * Display top 10 popular pictures and urls of tweets where pictures extracted from. In this way, we will feed our users with more information they concerned about.
+  * Display top 10 popular pictures with urls of tweets where pictures extracted from. In this way, we will feed our users with more information they concerned about.
   
 __3. What you will avoid in the future?__
 
