@@ -7,21 +7,26 @@ from google.cloud import language
 from google.cloud.language import enums
 from google.cloud.language import types
 
+# edit:Google Cloud API keys
+import os
+from google.oauth2 import service_account
+credentials_path = os.path.dirname(os.path.realpath(__file__)) + os.sep + "My First Project-079a6734c983.json"
+credentials = service_account.Credentials.from_service_account_file(credentials_path)
+
 # languages that NL API supports
 SUPPORTED_LANGUAGE = ['zh', 'zh-Hant', 'en', 'fr', 'de', 'it',
                       'ja', 'ko', 'pt', 'es', 
                      ]
-# Twitter APIs keys
 
+# Twitter APIs keys: get it via twitter developer website
 APP_KEY= ''
 APP_SECRET = ''
 OAUTH_TOKEN = ''
 OAUTH_TOKEN_SECRET = ''
 
-
 # Instantiates twitter APIs and google NL API client.
 twitter = Twython(APP_KEY, APP_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
-client = language.LanguageServiceClient()
+client = language.LanguageServiceClient(credentials=credentials) # edit: the source code cannot pass by parameter
 
 # program main function begin
 while True:
